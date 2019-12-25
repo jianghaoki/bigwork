@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>登录界面</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background: white;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bigbox{
+            padding-top: 30px;           
+        }
+
+        #scrollobj{
+            white-space:nowrap;
+            overflow:hidden;
+            width:400px;
+            margin:0px;
+            background-color: floralwhite;
+            padding-left: 400px;
+            margin-left: 540px;
+            border:4px solid navajowhite;
+            font-weight: bold;
+        }
+
+        .login {
+            position:absolute;
+            margin:103px auto;        
+            top:-30px;
+            left:105px;
+            width: 400px;       
+            background: floralwhite;
+            border-radius: 10px;           
+            transform: rotate(-15deg);
+        }
+
+        .login2 {
+            position:relative;
+            margin:100px auto;
+            padding:50px 20px;
+            width: 650px;
+            height: 500px;
+            border:1px solid white;
+            background: navajowhite;
+            border-radius: 10px;
+            transform: rotate(-5deg);
+        }
+
+        .login1 {
+            position:absolute;
+            margin:0 auto;
+            top:-10px;
+            left:25px;     
+            width: 600px;
+            height: 500px;
+            border:1px solid white;
+            border-radius: 10px;
+            background: antiquewhite;
+            transform: rotate(20deg);
+        }
+
+        .box{
+            
+            text-align: center;  
+            /*表单中内容居中*/
+            border: 4px solid whitesmoke;
+            border-radius: 10px;
+        }
+
+        .box h1{
+            color: goldenrod;    
+            /* 设置字体颜色 */
+            font-size: 25px;
+        }
+
+        .box input[type="text"]{
+            border-radius: 40px;
+            border: 2px solid navajowhite;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            padding: 14px 10px;
+            width: 200px;
+            outline: none;
+            color: orangered;     
+            /* 设置输入框中竖线的颜色 */
+        }
+
+        .box input[type="password"]{
+            border-radius: 40px;
+            border: 2px solid #ccc;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            padding: 14px 10px;
+            width: 200px;
+            outline: none;
+            color: orangered;     
+            /* 设置输入框中竖线的颜色 */
+        }
+
+        .box input[type="text"]:focus{
+            width: 300px;
+            border-color: orangered;
+        }
+
+        .box input[type="password"]:focus{
+            width: 300px;
+            border-color: orangered;
+        }
+
+        .box input[type="submit"]{
+            border-radius: 30px;
+            border: 2px solid navajowhite;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            padding: 15px 40px;
+            outline: none;
+            color: black;
+        }
+
+        .box input[type="submit"]:hover{
+            background: orangered;
+        }
+
+        .box input[type="button"]{
+            border-radius: 30px;
+            border: 2px solid #ccc;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            padding: 15px 40px;
+            outline: none;
+            color: black;
+        }
+
+        .box input[type="button"]:hover{
+            background: orangered;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <div id="scrollobj" style="color: goldenrod;">欢迎欣赏第二小组制作的网页！！！&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp欢迎欣赏第二小组制作的网页！！！&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+        <div class="login2">
+        <div class="login1">
+        <div class="login">
+            <form class="box">
+            <h1>登录界面</h1>
+            <input type="text" name="name" placeholder="用户名">
+            <input type="password" name="pwd" placeholder="密码">
+            <input type="submit" name="login" value="登录">
+            <a href="registe.html"><input type="button" class="btn" name="regist" value="注册"></a>
+            </form>
+        </div>
+        </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    function scroll(obj){
+        var tmp=(obj.scrollLeft)++;
+        if(obj.scrollLeft==tmp){
+            obj.innerHTML+=obj.innerHTML;
+        }
+        if(obj.scrollLeft>=obj.firstChild.offsetWidth){
+            obj.scrollLeft=0;
+        }
+    }
+    setInterval("scroll(document.getElementById('scrollobj'))",20);
+</script>
+</html>

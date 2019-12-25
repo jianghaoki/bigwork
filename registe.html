@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>注册界面</title>
+	<style type="text/css">
+		    body {
+            margin: 0;
+            padding: 0;
+            background: white;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .bigbox{
+            padding-top: 30px;           
+        }
+
+        #scrollobj{
+            white-space:nowrap;
+            overflow:hidden;
+            width:400px;
+            margin:0px;
+            background-color: floralwhite;
+            padding-left: 400px;
+            margin-left: 540px;
+            border:4px solid navajowhite;
+            font-weight: bold;
+        }
+
+        .login {
+            position:absolute;
+            margin:103px auto;        
+            top:-30px;
+            left:105px;
+            width: 400px;       
+            background: floralwhite;
+            border-radius: 10px;           
+            transform: rotate(-15deg);
+        }
+
+        .login2 {
+            position:relative;
+            margin:100px auto;
+            padding:50px 20px;
+            width: 650px;
+            height: 500px;
+            border:1px solid white;
+            background: navajowhite;
+            border-radius: 10px;
+            transform: rotate(-5deg);
+        }
+
+        .login1 {
+            position:absolute;
+            margin:0 auto;
+            top:-10px;
+            left:25px;     
+            width: 600px;
+            height: 500px;
+            border:1px solid white;
+            border-radius: 10px;
+            background: antiquewhite;
+            transform: rotate(20deg);
+        }
+
+        .box{
+            
+            text-align: center;  
+            /*表单中内容居中*/
+            border: 4px solid whitesmoke;
+            border-radius: 10px;
+        }
+
+        .box h1{
+            color: goldenrod;    
+            /* 设置字体颜色 */
+            font-size: 25px;
+        }
+        .login label{
+  			    display:inline-block;
+  			    width:80px;
+  			    text-align: right;
+            color: darkgoldenrod;
+            margin-left: -30px;
+  		  }
+
+  		  #btn {
+  			    height: 30px;
+  			    width:100px;
+  			    padding: 5px;
+  			    border: 2px solid #ccc;
+  			    background-color: antiquewhite;
+  			    font-weight: bold;
+  			    cursor: pointer;
+  			    border-radius: 20px;
+  			    margin-left: 0px;
+            color: darkgoldenrod;
+  		  }
+
+        #btn:hover{
+            background: gold;
+        }
+
+        input{
+            height: 35px;
+            width: 160px;
+            border-radius: 10px;
+        }
+
+        input:focus{
+            border:2px solid darkgoldenrod;
+            outline: 0;       
+        }
+
+        .borderRed{
+            border: 2px solid red;
+        }
+
+        strong{
+            width: 200px;
+            height: 30px;
+            color:#000;
+            border:2px solid red;
+            display: inline-block;
+            text-align: center;   
+            border-radius: 15px;
+            border-left:none;
+            margin-left: 5px;
+        }
+
+        img{
+            display: none;
+            border-radius: 10px;
+            margin-bottom: -7px;
+        }
+
+	</style>
+</head>
+<body>
+  <div class="bigbox">
+      <div id="scrollobj" style="color: goldenrod;">欢迎欣赏第二小组制作的网页！！！&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp欢迎欣赏第二小组制作的网页！！！&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+	<div class="login2">
+		<div class="login1">
+			<div class="login">
+				<form class="box">
+        			<h1>注册界面</h1>
+        			<p>
+        				<label for="name">*用户名:</label>
+        				<input type="text" id="name" onblur="checkName()" >
+        				<img src="" width="30px" height="30px">
+        			</p>
+
+        			<p>
+        				<label for="password">*密码:</label>
+       					<input type="password" id="password" onblur="checkPassword1()"required>
+       					<img src="" width="30px" height="30px"></p>
+       				</p>
+
+       				<p>
+       					<label for="R_password">*确认密码:</label>
+        				<input type="password" id="R_password"  onblur="checkPassword2()"required>
+        				<img src="" width="30px" height="30px">
+        				<span id="label" style="position: absolute;"></span>
+        			</p>
+
+        			<p>
+        				<a href="Log in.html"><input type="button" id="btn" class="btn" name="login" value="登录"></a>
+        			</p>
+
+        			<p>
+        				<input type="button" class="btn" id="btn" name="registe" value="注册">
+        			</p>
+    			</form>
+			</div>
+		</div>
+	</div>
+  </div>
+</body>
+<script type="text/javascript">
+	  var ele={ 
+	  //存放各个input字段obj
+  	  	form:document.getElementById("form"),
+      	name: document.getElementById("name"),
+      	password: document.getElementById("password"),
+      	R_password: document.getElementById("R_password"),
+      	imgs:document.getElementsByTagName("img"),
+      	label:document.getElementById("label"),
+      	btn:document.getElementById("btn")
+    };
+
+    //验证name
+  	function checkName(){  
+    	var name=ele.name.value;
+    	if(name!=""){
+    		ele.name.className="";
+    		ele.imgs[0].setAttribute("src","image/right.jpg");
+    		ele.imgs[0].style.display="inline";
+    		return true;
+    	}
+    	else{ //名字不符合    	
+      		ele.name.className="borderRed";
+      		//显示红色边框
+      		ele.imgs[0].setAttribute("src","image/wrong.jpg");
+      		ele.imgs[0].style.display="inline";
+      		return false;
+    	}
+  	}
+
+  	//验证密码
+  	function checkPassword1(){ 
+  	 	var password1=ele.password.value;
+  		if(password1){
+  			  ele.password.className="";  		 	
+  			  ele.imgs[1].setAttribute("src","image/right.jpg");
+        	ele.imgs[1].style.display="inline";       
+  		}
+  		else{
+  			ele.password.className="borderRed";  		 	
+  			ele.imgs[1].setAttribute("src","image/wrong.jpg");
+        	ele.imgs[1].style.display="inline";        
+  		}  	   
+  	}
+
+  	//确认密码
+  	function checkPassword2(){
+  	 	var  password1=ele.password.value;
+  	 	var  password2=ele.R_password.value; 
+  	 	if(password2){
+  	 	 	if(password1!=password2) { 
+  	    		ele.password.className="borderRed";  		 	
+  		    	ele.imgs[2].setAttribute("src","image/wrong.jpg");
+            ele.imgs[2].style.display = "inline"; 
+            label.innerHTML='<strong class="false">您两次输入的密码不一样</strong>';
+            return false;
+        } 
+         	else {
+            	ele.R_password.className=""; 
+        		  ele.imgs[2].setAttribute("src","image/right.jpg");
+            	ele.imgs[2].style.display="inline"; 
+            	label.innerHTML="";
+       			  return true;
+            }
+  	 	  } 
+  	}
+
+  	//验证是否成功注册
+  	btn[1].onclick=function(){      
+       	if(checkName()&&checkPassword2()){
+    	  	  alert(" 注册成功!");
+            return true; 
+    	   }
+    	  else{
+    	  	  alert("请正确填写完信息！");
+    	      return false;
+    	  }
+    }
+
+    //添加文字滚动
+    function scroll(obj){
+        var tmp=(obj.scrollLeft)++;
+        if(obj.scrollLeft==tmp){
+            obj.innerHTML+=obj.innerHTML;
+        }
+        if(obj.scrollLeft>=obj.firstChild.offsetWidth){
+            obj.scrollLeft=0;
+        }
+    }
+    setInterval("scroll(document.getElementById('scrollobj'))",20);
+</script>
+</html>
